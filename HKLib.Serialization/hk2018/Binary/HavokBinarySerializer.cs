@@ -84,7 +84,7 @@ public class HavokBinarySerializer : HavokSerializer
     public override IHavokObject Read(Stream stream)
     {
         IEnumerable<IHavokObject> havokObjects = ReadAllObjects(stream);
-        if (havokObjects.FirstOrDefault() is not IHavokObject rootLevelObject)
+        if (havokObjects.FirstOrDefault() is not { } rootLevelObject)
         {
             throw new InvalidDataException("No root level Havok object found.");
         }
@@ -97,7 +97,7 @@ public class HavokBinarySerializer : HavokSerializer
         HavokBinaryReader reader = new(stream);
         IReadOnlyList<IHavokObject> havokObjects = ReadTAG0(reader);
         reader.Close();
-        return havokObjects;
+        return havokObjects.Distinct();
     }
 
     public override void Write(IHavokObject havokObject, Stream stream)
