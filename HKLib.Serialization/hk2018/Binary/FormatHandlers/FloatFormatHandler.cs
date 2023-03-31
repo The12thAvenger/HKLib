@@ -84,7 +84,8 @@ internal static class FloatFormatHandler
     private static void WriteHalf(HavokBinaryWriter writer, bool bigEndian, object value)
     {
         float floatValue = (float)value;
-        byte[] bytes = BitConverter.GetBytes(floatValue);
+        Span<byte> bytes = stackalloc byte[4];
+        BitConverter.TryWriteBytes(bytes, floatValue);
         if (bigEndian)
         {
             writer.WriteByte(bytes[3]);
