@@ -16,15 +16,24 @@ public static class PointerFormatHandler
         return id == "object0" ? null! : context.GetObject(id);
     }
 
-    public static void Write(XElement parentElement, HavokType type, object value, XmlSerializeContext context)
+    public static void Write(XElement parentElement, HavokType type, object? value, XmlSerializeContext context)
     {
-        if (value is not IHavokObject havokObject)
+        string pointer;
+        if (value is null)
+        {
+            pointer = "object0";
+        }
+        else if (value is not IHavokObject havokObject)
         {
             throw new ArgumentException("Invalid pointer type. Only pointers to IHavokObjects are supported",
                 nameof(value));
         }
+        else
+        {
+            HavokType actualSubType = FormatHandler.GetActualType(value, context.TypeRegistry);
+            pointer = context.Enqueue(actualSubType, havokObject);
+        }
 
-        string pointer = context.Enqueue(havokObject);
         parentElement.Add(new XElement("pointer", new XAttribute("id", pointer)));
     }
 }
