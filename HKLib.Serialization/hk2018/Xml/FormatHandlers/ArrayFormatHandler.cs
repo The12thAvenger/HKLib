@@ -178,13 +178,14 @@ internal abstract class ArrayFormatHandler
     private static object ReadMatrix4X4(XElement element, HavokType type, XmlDeserializeContext context)
     {
         HavokType subType = GetSubType(type);
+        List<XElement> values = element.Elements().ToList();
 
         Matrix4x4 matrix = new();
         for (int i = 0; i < 4; i++)
         {
             for (int j = 0; j < 4; j++)
             {
-                matrix[i, j] = (float)FormatHandler.Read(element, subType, context);
+                matrix[i, j] = (float)FormatHandler.Read(values[i * 4 + j], subType, context);
             }
         }
 
@@ -212,13 +213,14 @@ internal abstract class ArrayFormatHandler
     private static object ReadMatrix3X3(XElement element, HavokType type, XmlDeserializeContext context)
     {
         HavokType subType = GetSubType(type);
+        List<XElement> values = element.Elements().ToList();
 
         Matrix4x4 matrix = new();
         for (int i = 0; i < 3; i++)
         {
             for (int j = 0; j < 4; j++)
             {
-                matrix[i, j] = (float)FormatHandler.Read(element, subType, context);
+                matrix[i, j] = (float)FormatHandler.Read(values[i * 4 + j], subType, context);
             }
         }
 
