@@ -295,7 +295,7 @@ internal class ArrayFormatHandler<T> : ArrayFormatHandler
         object[] elements = context.GetItem(pointer, reader);
         foreach (object element in elements)
         {
-            if (element is not null && element is not T)
+            if (element is not (null or T))
                 throw new InvalidOperationException(
                     $"Invalid element type. Expected: {typeof(T)} | Received: {element.GetType()}");
             list.Add((T)element!);
