@@ -31,7 +31,7 @@ public static class IntFormatHandler
                 1 => (sbyte)longVal,
                 2 => (short)longVal,
                 4 => (int)longVal,
-                8 => longVal,
+                8 => (object)longVal,
                 _ => throw new InvalidDataException("Unexpected int format")
             };
         }
@@ -47,7 +47,7 @@ public static class IntFormatHandler
                 1 => (byte)ulongVal,
                 2 => (ushort)ulongVal,
                 4 => (uint)ulongVal,
-                8 => ulongVal,
+                8 => (object)ulongVal,
                 _ => throw new InvalidDataException("Unexpected int format")
             };
         }
