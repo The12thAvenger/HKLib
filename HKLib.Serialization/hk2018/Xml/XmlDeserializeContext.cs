@@ -6,21 +6,28 @@ namespace HKLib.Serialization.hk2018.Xml;
 
 public class XmlDeserializeContext
 {
-    private Dictionary<string, object> _objects = new();
-    private Dictionary<string, HavokType> _types = new();
-    private Dictionary<string, XElement> _xmlObjects = new();
+    private readonly Dictionary<string, ObjectItem> _objects;
+    private readonly Dictionary<string, HavokType> _types;
 
-    public object GetObject(string pointer)
+    public XmlDeserializeContext(Dictionary<string, ObjectItem> objects, Dictionary<string, HavokType> types)
     {
-        if (pointer == "object0")
+        _objects = objects;
+        _types = types;
+    }
+
+    public object GetObject(string id)
+    {
+        if (id == "object0")
         {
-            throw new ArgumentException("Cannot get item for null pointer.", nameof(pointer));
+            throw new ArgumentException("The requested object is null.", nameof(id));
         }
 
-        if (_objects.TryGetValue(pointer, out object? havokObject))
+        if (!_objects.TryGetValue(id, out ObjectItem? objectItem))
         {
-            return havokObject;
+            throw new ArgumentException($"No object found with id {id}");
         }
+
+        return objectItem.Object ?? objectItem.ReadObject(this);
     }
 
 
@@ -28,12 +35,14 @@ public class XmlDeserializeContext
     {
         if (typeId == "type0")
         {
-            throw new ArgumentException("Cannot get type for id 0.", nameof(typeId));
+            throw new ArgumentException("The requested type is null.", nameof(typeId));
         }
 
         if (_types.TryGetValue(typeId, out HavokType? havokType))
         {
             return havokType;
         }
+
+        throw new ArgumentException($"Cannot get type for id {typeId}.", nameof(typeId));
     }
 }
