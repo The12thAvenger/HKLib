@@ -763,7 +763,7 @@ public class HavokBinarySerializer : HavokSerializer
 
             if (types[typeIndex].Hash is not { } hash)
             {
-                throw new InvalidOperationException($"Unable to verify hash for type {types[typeIndex].Identity}.");
+                throw new InvalidDataException($"Unable to verify hash for type {types[typeIndex].Identity}.");
             }
 
             if (reader.ReadUInt32() != hash)
@@ -785,7 +785,7 @@ public class HavokBinarySerializer : HavokSerializer
         {
             if (type.Hash is not { } hash)
             {
-                throw new InvalidOperationException(
+                throw new ArgumentException(
                     $"The type {type.Identity} has no associated hash and cannot be serialized as a top level type.");
             }
 
