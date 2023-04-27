@@ -15,9 +15,9 @@ public static class StringFormatHandler
         return stringValue;
     }
 
-    public static void Write(XElement parentElement, HavokType type, object value, XmlSerializeContext context)
+    public static void Write(XElement parentElement, HavokType type, object? value, XmlSerializeContext context)
     {
-        string stringVal = (string)value;
+        string stringVal = (string?)value ?? string.Empty;
         parentElement.Add(new XElement("string", new XAttribute("value", stringVal)));
     }
 }
