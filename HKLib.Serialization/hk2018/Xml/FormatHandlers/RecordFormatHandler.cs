@@ -34,7 +34,7 @@ public static class RecordFormatHandler
                     $"Field name mismatch in object of type {type.Identity}. Expected: {field.Name} | Encountered: {itemName}.");
             }
 
-            object fieldValue = FormatHandler.Read(item, field.Type, context);
+            object fieldValue = FormatHandler.Read(item.Elements().Single(), field.Type, context);
             if (!data.TrySetField(field.Name, fieldValue))
             {
                 throw new InvalidOperationException(
