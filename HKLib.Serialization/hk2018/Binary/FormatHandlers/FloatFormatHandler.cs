@@ -4,6 +4,7 @@ using HKLib.Serialization.hk2018.Binary.Util;
 
 namespace HKLib.Serialization.hk2018.Binary.FormatHandlers;
 
+// TODO switch to single value representation for SIMD floats
 internal static class FloatFormatHandler
 {
     private const int EndianMask = 0x100;

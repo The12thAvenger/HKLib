@@ -9,16 +9,16 @@ namespace HKLib.Reflection.hk2018;
 /// </summary>
 public class HavokTypeBuilder
 {
-    private bool _built;
-    private List<HavokType.Member> _fields = new();
-
-    private string? _identity;
-
-    private Func<string, Type?> _identityToTypeFunc = identity =>
+    private readonly Func<string, Type?> _identityToTypeFunc = identity =>
     {
         IdentityTypeMap.Map.TryGetValue(identity, out Type? type);
         return type;
     };
+
+    private bool _built;
+    private List<HavokType.Member> _fields = new();
+
+    private string? _identity;
 
     private List<HavokType.Interface> _interfaces = new();
 

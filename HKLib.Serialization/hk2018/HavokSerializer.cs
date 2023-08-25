@@ -78,7 +78,16 @@ public abstract class HavokSerializer
     /// <summary>
     /// Reads a Havok 2018 file from a stream and returns the root level object
     /// </summary>
-    public abstract IHavokObject Read(Stream stream);
+    public virtual IHavokObject Read(Stream stream)
+    {
+        IEnumerable<IHavokObject> havokObjects = ReadAllObjects(stream);
+        if (havokObjects.FirstOrDefault() is not { } rootLevelObject)
+        {
+            throw new InvalidDataException("No root level Havok object found.");
+        }
+
+        return rootLevelObject;
+    }
 
     /// <summary>
     /// Reads a Havok 2018 file from a path and returns an <see cref="IEnumerable{T}" /> starting with the root level object of

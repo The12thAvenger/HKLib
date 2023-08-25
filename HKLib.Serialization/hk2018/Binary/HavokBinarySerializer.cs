@@ -9,17 +9,9 @@ public class HavokBinarySerializer : HavokSerializer
 {
     private HavokCompendium? _compendium;
 
-    public HavokBinarySerializer() : this(LoadRegistry()) { }
+    public HavokBinarySerializer() : this(HavokTypeRegistry.Instance) { }
 
-    public HavokBinarySerializer(HavokTypeRegistry typeRegistry) : base(typeRegistry)
-    {
-        TypeRegistry = typeRegistry;
-    }
-
-    public static HavokTypeRegistry LoadRegistry()
-    {
-        return HavokTypeRegistry.Instance;
-    }
+    public HavokBinarySerializer(HavokTypeRegistry typeRegistry) : base(typeRegistry) { }
 
     private IReadOnlyList<HavokType> GetTypesFromCompendium(ulong compendiumId)
     {
@@ -79,17 +71,6 @@ public class HavokBinarySerializer : HavokSerializer
         HavokBinaryWriter writer = new(stream);
         WriteTCM0(writer, compendium);
         writer.Finish();
-    }
-
-    public override IHavokObject Read(Stream stream)
-    {
-        IEnumerable<IHavokObject> havokObjects = ReadAllObjects(stream);
-        if (havokObjects.FirstOrDefault() is not { } rootLevelObject)
-        {
-            throw new InvalidDataException("No root level Havok object found.");
-        }
-
-        return rootLevelObject;
     }
 
     public override IEnumerable<IHavokObject> ReadAllObjects(Stream stream)
@@ -239,11 +220,11 @@ public class HavokBinarySerializer : HavokSerializer
         reader.EnterSection("PTCH");
 
 #if DEBUG
-        Dictionary<Reflection.hk2018.HavokType, List<uint>> patches = new();
+        Dictionary<HavokType, List<uint>> patches = new();
         while (reader.Position < reader.GetSectionEnd())
         {
             int typeIndex = reader.ReadInt32();
-            Reflection.hk2018.HavokType type = types[typeIndex];
+            HavokType type = types[typeIndex];
             int count = reader.ReadInt32();
             List<uint> offsets = new(count);
             for (int i = 0; i < count; i++)
@@ -782,7 +763,7 @@ public class HavokBinarySerializer : HavokSerializer
 
             if (types[typeIndex].Hash is not { } hash)
             {
-                throw new InvalidOperationException($"Unable to verify hash for type {types[typeIndex].Identity}.");
+                throw new InvalidDataException($"Unable to verify hash for type {types[typeIndex].Identity}.");
             }
 
             if (reader.ReadUInt32() != hash)
@@ -804,7 +785,7 @@ public class HavokBinarySerializer : HavokSerializer
         {
             if (type.Hash is not { } hash)
             {
-                throw new InvalidOperationException(
+                throw new ArgumentException(
                     $"The type {type.Identity} has no associated hash and cannot be serialized as a top level type.");
             }
 

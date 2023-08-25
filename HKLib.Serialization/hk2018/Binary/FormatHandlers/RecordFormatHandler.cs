@@ -1,13 +1,12 @@
 ﻿using HKLib.hk2018;
 using HKLib.Reflection.hk2018;
 using HKLib.Serialization.hk2018.Binary.Util;
-using HavokType = HKLib.Reflection.hk2018.HavokType;
 
 namespace HKLib.Serialization.hk2018.Binary.FormatHandlers;
 
 internal static class RecordFormatHandler
 {
-    public static object Read(HavokBinaryReader reader, Reflection.hk2018.HavokType type,
+    public static object Read(HavokBinaryReader reader, HavokType type,
         BinaryDeserializeContext context)
     {
         HavokData data = HavokData.Instantiate(type) ??
@@ -20,7 +19,7 @@ internal static class RecordFormatHandler
                 $"Attempted unaligned read. Position: {objectOffset} | Alignment: {type.Alignment}");
         }
 
-        foreach (Reflection.hk2018.HavokType.Member field in type.Fields)
+        foreach (HavokType.Member field in type.Fields)
         {
             if (reader.Position - objectOffset > field.Offset)
             {
@@ -58,11 +57,10 @@ internal static class RecordFormatHandler
         if (reader.Position - objectOffset > type.Size)
             throw new InvalidOperationException("Read past the end of the object");
 
-        IHavokObject obj = data.GetObject<IHavokObject>()!;
-        return obj;
+        return data.GetObject<IHavokObject>()!;
     }
 
-    public static void Write(HavokBinaryWriter writer, Reflection.hk2018.HavokType type, object? value,
+    public static void Write(HavokBinaryWriter writer, HavokType type, object? value,
         BinarySerializeContext context)
     {
         // non-nullable nested-structs which were not instantiated are instantiated here
@@ -80,7 +78,7 @@ internal static class RecordFormatHandler
                              nameof(value));
 
         long objectOffset = writer.Position;
-        foreach (Reflection.hk2018.HavokType.Member field in type.Fields)
+        foreach (HavokType.Member field in type.Fields)
         {
             if (writer.Position - objectOffset > field.Offset)
             {
