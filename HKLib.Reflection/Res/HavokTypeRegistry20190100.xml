@@ -8360,7 +8360,7 @@
         <HavokType Id="208" Name="hkHandle" Parent="0" Optionals="12100349" Format="7" SubType="0" Size="4" Alignment="4" Flags="0" Version="1" Hash="407873500">
             <Template>
                 <Parameter Name="TYPE" Kind="Type" Value="1508"/>
-                <Parameter Name="INVALID_VALUE" Kind="Value" Value="4294967295"/>
+                <Parameter Name="INVALID_VALUE" Kind="Value" Value="-1"/>
             </Template>
             <Members>
                 <Member Name="value" Type="1508" Offset="0" Flags="34"/>
@@ -15743,7 +15743,7 @@
         <HavokType Id="2066" Name="hkHandle" Parent="0" Optionals="12100349" Format="7" SubType="0" Size="4" Alignment="4" Flags="0" Version="1" Hash="3224493305">
             <Template>
                 <Parameter Name="TYPE" Kind="Type" Value="1304"/>
-                <Parameter Name="INVALID_VALUE" Kind="Value" Value="4294967295"/>
+                <Parameter Name="INVALID_VALUE" Kind="Value" Value="-1"/>
             </Template>
             <Members>
                 <Member Name="value" Type="1304" Offset="0" Flags="34"/>
