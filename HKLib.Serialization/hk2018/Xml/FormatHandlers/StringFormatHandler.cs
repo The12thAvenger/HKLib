@@ -7,12 +7,7 @@ public static class StringFormatHandler
 {
     public static object Read(XElement element, HavokType type, XmlDeserializeContext context)
     {
-        if (element.Attribute("value")?.Value is not { } stringValue)
-        {
-            throw new InvalidDataException("Missing \"value\" attribute for string value.");
-        }
-
-        return stringValue;
+        return element.Attribute("value")?.Value ?? string.Empty;
     }
 
     public static void Write(XElement parentElement, HavokType type, object? value, XmlSerializeContext context)
