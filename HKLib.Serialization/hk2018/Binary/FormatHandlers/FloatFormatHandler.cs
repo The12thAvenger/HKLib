@@ -4,7 +4,6 @@ using HKLib.Serialization.hk2018.Binary.Util;
 
 namespace HKLib.Serialization.hk2018.Binary.FormatHandlers;
 
-// TODO switch to single value representation for SIMD floats
 internal static class FloatFormatHandler
 {
     private const int EndianMask = 0x100;
@@ -19,8 +18,8 @@ internal static class FloatFormatHandler
             (2, _) => ReadHalf(reader, bigEndian),
             (4, _) => reader.ReadSingle(bigEndian),
             (8, _) => reader.ReadDouble(bigEndian),
-            (16, 23) => ReadVector128Float(reader, bigEndian),
-            (16, 52) => ReadVector128Double(reader, bigEndian),
+            (16, 23) => ReadSimdFloat(reader, bigEndian),
+            (16, 52) => ReadSimdDouble(reader, bigEndian),
             _ => throw new InvalidDataException("Unexpected float format")
         };
     }
@@ -42,10 +41,10 @@ internal static class FloatFormatHandler
                 writer.WriteDouble((double)value, bigEndian);
                 break;
             case (16, 23):
-                WriteVector128Float(writer, bigEndian, value);
+                WriteSimdFloat(writer, bigEndian, value);
                 break;
             case (16, 52):
-                WriteVector128Double(writer, bigEndian, value);
+                WriteSimdDouble(writer, bigEndian, value);
                 break;
             default:
                 throw new ArgumentException("Invalid float format", nameof(type));
@@ -64,22 +63,22 @@ internal static class FloatFormatHandler
         return BitConverter.ToSingle(bytes);
     }
 
-    private static object ReadVector128Float(HavokBinaryReader reader, bool bigEndian)
+    private static object ReadSimdFloat(HavokBinaryReader reader, bool bigEndian)
     {
-        float m1 = reader.ReadSingle(bigEndian);
-        float m2 = reader.ReadSingle(bigEndian);
-        float m3 = reader.ReadSingle(bigEndian);
-        float m4 = reader.ReadSingle(bigEndian);
+        float val = reader.ReadSingle(bigEndian);
+        reader.ReadSingle(bigEndian);
+        reader.ReadSingle(bigEndian);
+        reader.ReadSingle(bigEndian);
 
-        return Vector128.Create(m1, m2, m3, m4);
+        return val;
     }
 
-    private static object ReadVector128Double(HavokBinaryReader reader, bool bigEndian)
+    private static object ReadSimdDouble(HavokBinaryReader reader, bool bigEndian)
     {
-        double m1 = reader.ReadDouble(bigEndian);
-        double m2 = reader.ReadDouble(bigEndian);
+        double val = reader.ReadDouble(bigEndian);
+        reader.ReadDouble(bigEndian);
 
-        return Vector128.Create(m1, m2);
+        return val;
     }
 
     private static void WriteHalf(HavokBinaryWriter writer, bool bigEndian, object value)
@@ -99,20 +98,20 @@ internal static class FloatFormatHandler
         }
     }
 
-    private static void WriteVector128Float(HavokBinaryWriter writer, bool bigEndian, object value)
+    private static void WriteSimdFloat(HavokBinaryWriter writer, bool bigEndian, object value)
     {
-        Vector128<float> vectorVal = (Vector128<float>)value;
+        float floatVal = (float)value;
 
-        writer.WriteSingle(vectorVal.GetElement(0), bigEndian);
-        writer.WriteSingle(vectorVal.GetElement(1), bigEndian);
-        writer.WriteSingle(vectorVal.GetElement(2), bigEndian);
-        writer.WriteSingle(vectorVal.GetElement(3), bigEndian);
+        writer.WriteSingle(floatVal, bigEndian);
+        writer.WriteSingle(floatVal, bigEndian);
+        writer.WriteSingle(floatVal, bigEndian);
+        writer.WriteSingle(floatVal, bigEndian);
     }
 
-    private static void WriteVector128Double(HavokBinaryWriter writer, bool bigEndian, object value)
+    private static void WriteSimdDouble(HavokBinaryWriter writer, bool bigEndian, object value)
     {
-        Vector128<double> vectorVal = (Vector128<double>)value;
-        writer.WriteDouble(vectorVal.GetElement(0), bigEndian);
-        writer.WriteDouble(vectorVal.GetElement(1), bigEndian);
+        double doubleVal = (double)value;
+        writer.WriteDouble(doubleVal, bigEndian);
+        writer.WriteDouble(doubleVal, bigEndian);
     }
 }
