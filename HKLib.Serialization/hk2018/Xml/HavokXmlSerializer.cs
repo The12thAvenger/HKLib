@@ -99,13 +99,13 @@ public class HavokXmlSerializer : HavokSerializer
                         builder.WithTemplateParameter(string.Empty, paramType.Builder);
                         break;
                     case "valueparam":
-                        if ((int?)param.Attribute("value") is not { } value)
+                        if ((uint?)param.Attribute("value") is not { } value)
                         {
                             throw new InvalidDataException(
                                 $"Encountered valueparam with missing value in type with id \"{id}\"");
                         }
 
-                        builder.WithTemplateParameter(string.Empty, value);
+                        builder.WithTemplateParameter(string.Empty, (int)value);
                         break;
                     default:
                         throw new InvalidDataException(
