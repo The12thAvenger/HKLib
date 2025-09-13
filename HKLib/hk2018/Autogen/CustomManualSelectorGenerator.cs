@@ -25,6 +25,8 @@ public class CustomManualSelectorGenerator : hkbGenerator, hkbVerifiable
     public CustomManualSelectorGenerator.ReplanningAI m_replanningAI;
 
     public CustomManualSelectorGenerator.RideSync m_rideSync;
+    
+    public bool m_isBasePoseAnim;
 
 
     public enum ChangeTypeOfSelectedIndexAfterActivate : int
