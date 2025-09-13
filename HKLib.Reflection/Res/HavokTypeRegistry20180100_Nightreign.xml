@@ -4260,15 +4260,7 @@
                 <Preset Name="NUM_INSTRUCTIONS" Value="12"/>
             </Presets>
         </HavokType>
-        <HavokType Id="1727" Name="hkReflect::Decl::DeclFlags" Parent="1522" Optionals="8" Format="33284" SubType="0" Size="4" Alignment="4" Flags="0" Version="0" Hash="108859644">
-            <Template>
-                <Parameter Name="BITS" Kind="Type" Value="1728"/>
-                <Parameter Name="STORAGE" Kind="Type" Value="1381"/>
-            </Template>
-            <Members>
-                <Member Name="storage" Type="1381" Offset="0" Flags="34"/>
-            </Members>
-        </HavokType>
+        <HavokType Id="1727" Name="hkReflect::Decl::DeclFlags" Parent="1522" Optionals="8" Format="33284" SubType="0" Size="4" Alignment="4" Flags="0" Version="0" Hash="108859644"/>
         <HavokType Id="1728" Name="hkReflect::Decl::DeclFlagBits" Parent="0" Optionals="12616941" Format="33284" SubType="0" Size="4" Alignment="4" Flags="0" Version="0" Hash="1678628114">
             <Presets>
                 <Preset Name="DECL_NONE" Value="0"/>
@@ -12447,11 +12439,7 @@
                 <Member Name="ptr" Type="3139" Offset="0" Flags="36"/>
             </Members>
         </HavokType>
-        <HavokType Id="1663" Name="hkSimpleLocalFrame::ChildPointer" Parent="3222" Optionals="40" Format="6" SubType="1666" Size="8" Alignment="8" Flags="0" Version="0" Hash="1886878738">
-            <Template>
-                <Parameter Name="T" Kind="Type" Value="1666"/>
-            </Template>
-        </HavokType>
+        <HavokType Id="1663" Name="hkSimpleLocalFrame::ChildPointer" Parent="3222" Optionals="40" Format="6" SubType="1666" Size="8" Alignment="8" Flags="0" Version="0" Hash="1886878738"/>
         <HavokType Id="1711" Name="hkReflect::VoidVar" Parent="1723" Optionals="75531983" Format="6" SubType="0" Size="24" Alignment="8" Flags="0" Version="0" Hash="2827314411">
             <Members/>
         </HavokType>
@@ -16397,64 +16385,16 @@
             <Template>
                 <Parameter Name="VALUE_TYPE" Kind="Type" Value="527"/>
             </Template>
-            <Members>
-                <Member Name="isExclusive" Type="1636" Offset="0" Flags="32"/>
-                <Member Name="flags" Type="1380" Offset="4" Flags="32"/>
-                <Member Name="gravityFactor" Type="1977" Offset="8" Flags="32"/>
-                <Member Name="timeFactor" Type="1977" Offset="12" Flags="32"/>
-                <Member Name="maxLinearSpeed" Type="1977" Offset="16" Flags="32"/>
-                <Member Name="maxAngularSpeed" Type="1977" Offset="20" Flags="32"/>
-                <Member Name="linearDamping" Type="1977" Offset="24" Flags="32"/>
-                <Member Name="angularDamping" Type="1977" Offset="28" Flags="32"/>
-                <Member Name="solverStabilizationSpeedThreshold" Type="1977" Offset="32" Flags="32"/>
-                <Member Name="solverStabilizationSpeedReduction" Type="1977" Offset="36" Flags="32"/>
-                <Member Name="deactivationSettings" Type="525" Offset="40" Flags="32"/>
-                <Member Name="fullCastSettings" Type="523" Offset="64" Flags="32"/>
-            </Members>
         </HavokType>
         <HavokType Id="64" Name="hkFreeListArrayElement" Parent="546" Optionals="262152" Format="7" SubType="0" Size="112" Alignment="16" Flags="0" Version="5" Hash="392890862">
             <Template>
                 <Parameter Name="VALUE_TYPE" Kind="Type" Value="546"/>
             </Template>
-            <Members>
-                <Member Name="name" Type="2033" Offset="32" Flags="32"/>
-                <Member Name="isExclusive" Type="1636" Offset="40" Flags="32"/>
-                <Member Name="flags" Type="1381" Offset="44" Flags="32"/>
-                <Member Name="triggerType" Type="245" Offset="48" Flags="32"/>
-                <Member Name="triggerManifoldTolerance" Type="1622" Offset="49" Flags="32"/>
-                <Member Name="dynamicFriction" Type="1632" Offset="50" Flags="32"/>
-                <Member Name="staticFriction" Type="1632" Offset="52" Flags="32"/>
-                <Member Name="restitution" Type="1632" Offset="54" Flags="32"/>
-                <Member Name="frictionCombinePolicy" Type="244" Offset="56" Flags="32"/>
-                <Member Name="restitutionCombinePolicy" Type="244" Offset="57" Flags="32"/>
-                <Member Name="weldingTolerance" Type="1977" Offset="60" Flags="32"/>
-                <Member Name="maxContactImpulse" Type="1977" Offset="64" Flags="32"/>
-                <Member Name="fractionOfClippedImpulseToApply" Type="1977" Offset="68" Flags="32"/>
-                <Member Name="massChangerCategory" Type="243" Offset="72" Flags="32"/>
-                <Member Name="massChangerHeavyObjectFactor" Type="1632" Offset="74" Flags="32"/>
-                <Member Name="softContactForceFactor" Type="1632" Offset="76" Flags="32"/>
-                <Member Name="softContactDampFactor" Type="1632" Offset="78" Flags="32"/>
-                <Member Name="softContactSeparationVelocity" Type="1622" Offset="80" Flags="32"/>
-                <Member Name="surfaceVelocity" Type="242" Offset="88" Flags="32"/>
-                <Member Name="disablingCollisionsBetweenCvxCvxDynamicObjectsDistance" Type="1632" Offset="96" Flags="32"/>
-                <Member Name="userData" Type="1643" Offset="104" Flags="32"/>
-            </Members>
         </HavokType>
         <HavokType Id="65" Name="hkFreeListArrayElement" Parent="618" Optionals="262152" Format="7" SubType="0" Size="112" Alignment="16" Flags="0" Version="3" Hash="2844466949">
             <Template>
                 <Parameter Name="VALUE_TYPE" Kind="Type" Value="618"/>
             </Template>
-            <Members>
-                <Member Name="transform" Type="2004" Offset="0" Flags="34"/>
-                <Member Name="scale" Type="1980" Offset="64" Flags="34"/>
-                <Member Name="shape" Type="4584" Offset="80" Flags="34"/>
-                <Member Name="shapeTag" Type="1637" Offset="88" Flags="34"/>
-                <Member Name="destructionTag" Type="1637" Offset="90" Flags="34"/>
-                <Member Name="isEmpty" Type="1638" Offset="92" Flags="34"/>
-                <Member Name="nextEmptyElement" Type="1636" Offset="96" Flags="34"/>
-                <Member Name="instanceId" Type="297" Offset="100" Flags="34"/>
-                <Member Name="parentShape" Type="276" Offset="104" Flags="34"/>
-            </Members>
         </HavokType>
         <HavokType Id="132" Name="hkHandle" Parent="0" Optionals="79987949" Format="7" SubType="0" Size="2" Alignment="2" Flags="0" Version="0" Hash="2290423637">
             <Template>
@@ -16567,33 +16507,9 @@
                 <Member Name="shapeKey" Type="1254" Offset="40" Flags="32"/>
             </Members>
         </HavokType>
-        <HavokType Id="297" Name="hknpShapeInstanceId" Parent="162" Optionals="8" Format="7" SubType="0" Size="2" Alignment="2" Flags="0" Version="0" Hash="2432889274">
-            <Template>
-                <Parameter Name="TYPE" Kind="Type" Value="1640"/>
-                <Parameter Name="INVALID_VALUE" Kind="Value" Value="32767"/>
-            </Template>
-            <Members>
-                <Member Name="value" Type="1640" Offset="0" Flags="34"/>
-            </Members>
-        </HavokType>
-        <HavokType Id="304" Name="hknpConstraintGroupId" Parent="2549" Optionals="24" Format="7" SubType="0" Size="4" Alignment="4" Flags="0" Version="1" Hash="1770725742">
-            <Template>
-                <Parameter Name="TYPE" Kind="Type" Value="1636"/>
-                <Parameter Name="INVALID_VALUE" Kind="Value" Value="2147483647"/>
-            </Template>
-            <Members>
-                <Member Name="value" Type="1636" Offset="0" Flags="34"/>
-            </Members>
-        </HavokType>
-        <HavokType Id="305" Name="hknpConstraintId" Parent="2549" Optionals="24" Format="7" SubType="0" Size="4" Alignment="4" Flags="0" Version="1" Hash="464991280">
-            <Template>
-                <Parameter Name="TYPE" Kind="Type" Value="1636"/>
-                <Parameter Name="INVALID_VALUE" Kind="Value" Value="2147483647"/>
-            </Template>
-            <Members>
-                <Member Name="value" Type="1636" Offset="0" Flags="34"/>
-            </Members>
-        </HavokType>
+        <HavokType Id="297" Name="hknpShapeInstanceId" Parent="162" Optionals="8" Format="7" SubType="0" Size="2" Alignment="2" Flags="0" Version="0" Hash="2432889274"/>
+        <HavokType Id="304" Name="hknpConstraintGroupId" Parent="2549" Optionals="24" Format="7" SubType="0" Size="4" Alignment="4" Flags="0" Version="1" Hash="1770725742"/>
+        <HavokType Id="305" Name="hknpConstraintId" Parent="2549" Optionals="24" Format="7" SubType="0" Size="4" Alignment="4" Flags="0" Version="1" Hash="464991280"/>
         <HavokType Id="306" Name="hknpParticlesColliderId" Parent="0" Optionals="79725773" Format="7" SubType="0" Size="4" Alignment="4" Flags="0" Version="0" Hash="3507018947">
             <Members>
                 <Member Name="serialAndIndex" Type="1636" Offset="0" Flags="34"/>
@@ -18059,15 +17975,7 @@
         <HavokType Id="521" Name="hknpMotionPropertiesId" Parent="522" Optionals="75531465" Format="7" SubType="0" Size="2" Alignment="2" Flags="0" Version="0" Hash="2830209194">
             <Members/>
         </HavokType>
-        <HavokType Id="522" Name="hknpMotionPropertiesIdBase" Parent="240" Optionals="8" Format="7" SubType="0" Size="2" Alignment="2" Flags="0" Version="0" Hash="145283513">
-            <Template>
-                <Parameter Name="TYPE" Kind="Type" Value="1637"/>
-                <Parameter Name="INVALID_VALUE" Kind="Value" Value="65535"/>
-            </Template>
-            <Members>
-                <Member Name="value" Type="1637" Offset="0" Flags="34"/>
-            </Members>
-        </HavokType>
+        <HavokType Id="522" Name="hknpMotionPropertiesIdBase" Parent="240" Optionals="8" Format="7" SubType="0" Size="2" Alignment="2" Flags="0" Version="0" Hash="145283513"/>
         <HavokType Id="523" Name="hknpMotionProperties::FullCastSettings" Parent="0" Optionals="79725773" Format="7" SubType="0" Size="40" Alignment="4" Flags="0" Version="0" Hash="238870268">
             <Members>
                 <Member Name="minSeparation" Type="1977" Offset="0" Flags="32"/>
@@ -18115,15 +18023,7 @@
         <HavokType Id="528" Name="hknpMotionId" Parent="529" Optionals="75531465" Format="7" SubType="0" Size="4" Alignment="4" Flags="0" Version="0" Hash="2949764301">
             <Members/>
         </HavokType>
-        <HavokType Id="529" Name="hknpMotionIdBase" Parent="2549" Optionals="8" Format="7" SubType="0" Size="4" Alignment="4" Flags="0" Version="0" Hash="1504282133">
-            <Template>
-                <Parameter Name="TYPE" Kind="Type" Value="1636"/>
-                <Parameter Name="INVALID_VALUE" Kind="Value" Value="2147483647"/>
-            </Template>
-            <Members>
-                <Member Name="value" Type="1636" Offset="0" Flags="34"/>
-            </Members>
-        </HavokType>
+        <HavokType Id="529" Name="hknpMotionIdBase" Parent="2549" Optionals="8" Format="7" SubType="0" Size="4" Alignment="4" Flags="0" Version="0" Hash="1504282133"/>
         <HavokType Id="530" Name="hknpMotionCinfo" Parent="0" Optionals="1153467613" Format="7" SubType="0" Size="96" Alignment="16" Flags="0" Version="3" Hash="992298438">
             <Members>
                 <Member Name="motionPropertiesId" Type="1382" Offset="0" Flags="32"/>
@@ -18191,15 +18091,7 @@
         <HavokType Id="539" Name="hknpMaterialId" Parent="540" Optionals="75531465" Format="7" SubType="0" Size="2" Alignment="2" Flags="0" Version="0" Hash="3699226884">
             <Members/>
         </HavokType>
-        <HavokType Id="540" Name="hknpMaterialIdBase" Parent="240" Optionals="8" Format="7" SubType="0" Size="2" Alignment="2" Flags="0" Version="0" Hash="2288113611">
-            <Template>
-                <Parameter Name="TYPE" Kind="Type" Value="1637"/>
-                <Parameter Name="INVALID_VALUE" Kind="Value" Value="65535"/>
-            </Template>
-            <Members>
-                <Member Name="value" Type="1637" Offset="0" Flags="34"/>
-            </Members>
-        </HavokType>
+        <HavokType Id="540" Name="hknpMaterialIdBase" Parent="240" Optionals="8" Format="7" SubType="0" Size="2" Alignment="2" Flags="0" Version="0" Hash="2288113611"/>
         <HavokType Id="541" Name="hknpMaterialDescriptor" Parent="0" Optionals="79726285" Format="7" SubType="0" Size="24" Alignment="8" Flags="0" Version="0" Hash="3092039925">
             <Members>
                 <Member Name="name" Type="2033" Offset="0" Flags="32"/>
@@ -20492,30 +20384,10 @@
                 <Member Name="primitiveDataRuns" Type="1159" Offset="144" Flags="32"/>
             </Members>
         </HavokType>
-        <HavokType Id="1176" Name="hkcdDynamicTree::DynamicStorageInt16" Parent="1239" Optionals="8" Format="7" SubType="0" Size="24" Alignment="8" Flags="16" Version="0" Hash="3798138999">
-            <Template>
-                <Parameter Name="CODEC" Kind="Type" Value="1184"/>
-            </Template>
-            <Members/>
-        </HavokType>
-        <HavokType Id="1177" Name="hkcdDynamicTree::DynamicStorage16" Parent="1240" Optionals="8" Format="7" SubType="0" Size="24" Alignment="8" Flags="16" Version="0" Hash="3641842251">
-            <Template>
-                <Parameter Name="CODEC" Kind="Type" Value="1188"/>
-            </Template>
-            <Members/>
-        </HavokType>
-        <HavokType Id="1178" Name="hkcdDynamicTree::DynamicStorage32" Parent="1160" Optionals="8" Format="7" SubType="0" Size="24" Alignment="8" Flags="16" Version="0" Hash="3887983217">
-            <Template>
-                <Parameter Name="CODEC" Kind="Type" Value="1185"/>
-            </Template>
-            <Members/>
-        </HavokType>
-        <HavokType Id="1179" Name="hkcdDynamicTree::DynamicStoragePtr" Parent="1161" Optionals="8" Format="7" SubType="0" Size="24" Alignment="8" Flags="16" Version="0" Hash="929461782">
-            <Template>
-                <Parameter Name="CODEC" Kind="Type" Value="1186"/>
-            </Template>
-            <Members/>
-        </HavokType>
+        <HavokType Id="1176" Name="hkcdDynamicTree::DynamicStorageInt16" Parent="1239" Optionals="8" Format="7" SubType="0" Size="24" Alignment="8" Flags="16" Version="0" Hash="3798138999"/>
+        <HavokType Id="1177" Name="hkcdDynamicTree::DynamicStorage16" Parent="1240" Optionals="8" Format="7" SubType="0" Size="24" Alignment="8" Flags="16" Version="0" Hash="3641842251"/>
+        <HavokType Id="1178" Name="hkcdDynamicTree::DynamicStorage32" Parent="1160" Optionals="8" Format="7" SubType="0" Size="24" Alignment="8" Flags="16" Version="0" Hash="3887983217"/>
+        <HavokType Id="1179" Name="hkcdDynamicTree::DynamicStoragePtr" Parent="1161" Optionals="8" Format="7" SubType="0" Size="24" Alignment="8" Flags="16" Version="0" Hash="929461782"/>
         <HavokType Id="1180" Name="hkcdDynamicTree::AnisotropicMetric" Parent="0" Optionals="96502989" Format="7" SubType="0" Size="1" Alignment="1" Flags="16" Version="0" Hash="790510392">
             <Members/>
         </HavokType>
@@ -20536,26 +20408,8 @@
                 <Member Name="pad" Type="1636" Offset="28" Flags="34"/>
             </Members>
         </HavokType>
-        <HavokType Id="1185" Name="hkcdDynamicTree::CodecRawUint" Parent="1211" Optionals="8" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="0" Hash="1975960361">
-            <Template>
-                <Parameter Name="INDEX_TYPE" Kind="Type" Value="1380"/>
-            </Template>
-            <Members>
-                <Member Name="aabb" Type="1670" Offset="0" Flags="34"/>
-                <Member Name="parent" Type="1380" Offset="32" Flags="34"/>
-                <Member Name="children" Type="1196" Offset="36" Flags="34"/>
-            </Members>
-        </HavokType>
-        <HavokType Id="1186" Name="hkcdDynamicTree::CodecRawUlong" Parent="1163" Optionals="8" Format="7" SubType="0" Size="64" Alignment="16" Flags="0" Version="0" Hash="2245465086">
-            <Template>
-                <Parameter Name="INDEX_TYPE" Kind="Type" Value="1635"/>
-            </Template>
-            <Members>
-                <Member Name="aabb" Type="1670" Offset="0" Flags="34"/>
-                <Member Name="parent" Type="1635" Offset="32" Flags="34"/>
-                <Member Name="children" Type="1154" Offset="40" Flags="34"/>
-            </Members>
-        </HavokType>
+        <HavokType Id="1185" Name="hkcdDynamicTree::CodecRawUint" Parent="1211" Optionals="8" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="0" Hash="1975960361"/>
+        <HavokType Id="1186" Name="hkcdDynamicTree::CodecRawUlong" Parent="1163" Optionals="8" Format="7" SubType="0" Size="64" Alignment="16" Flags="0" Version="0" Hash="2245465086"/>
         <HavokType Id="1187" Name="hkcdDynamicTree::Codec18" Parent="0" Optionals="79725773" Format="7" SubType="0" Size="18" Alignment="2" Flags="0" Version="0" Hash="439298166">
             <Members>
                 <Member Name="aabb" Type="1668" Offset="0" Flags="34"/>
@@ -20862,42 +20716,10 @@
                 <Member Name="positions" Type="1256" Offset="64" Flags="32"/>
             </Members>
         </HavokType>
-        <HavokType Id="1286" Name="hkcdStaticTree::AabbUncompressedTree" Parent="1258" Optionals="24" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="0" Hash="3201708976">
-            <Template>
-                <Parameter Name="NODE" Kind="Type" Value="1166"/>
-            </Template>
-            <Members>
-                <Member Name="nodes" Type="1217" Offset="0" Flags="32"/>
-                <Member Name="domain" Type="1670" Offset="16" Flags="32"/>
-            </Members>
-        </HavokType>
-        <HavokType Id="1287" Name="hkcdStaticTree::Aabb6BytesTree" Parent="1259" Optionals="24" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="0" Hash="4050303801">
-            <Template>
-                <Parameter Name="NODE" Kind="Type" Value="1167"/>
-            </Template>
-            <Members>
-                <Member Name="nodes" Type="1218" Offset="0" Flags="32"/>
-                <Member Name="domain" Type="1670" Offset="16" Flags="32"/>
-            </Members>
-        </HavokType>
-        <HavokType Id="1288" Name="hkcdStaticTree::Aabb5BytesTree" Parent="1260" Optionals="24" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="0" Hash="3914757125">
-            <Template>
-                <Parameter Name="NODE" Kind="Type" Value="1168"/>
-            </Template>
-            <Members>
-                <Member Name="nodes" Type="1219" Offset="0" Flags="32"/>
-                <Member Name="domain" Type="1670" Offset="16" Flags="32"/>
-            </Members>
-        </HavokType>
-        <HavokType Id="1289" Name="hkcdStaticTree::Aabb4BytesTree" Parent="1261" Optionals="24" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="0" Hash="3779211537">
-            <Template>
-                <Parameter Name="NODE" Kind="Type" Value="1169"/>
-            </Template>
-            <Members>
-                <Member Name="nodes" Type="1220" Offset="0" Flags="32"/>
-                <Member Name="domain" Type="1670" Offset="16" Flags="32"/>
-            </Members>
-        </HavokType>
+        <HavokType Id="1286" Name="hkcdStaticTree::AabbUncompressedTree" Parent="1258" Optionals="24" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="0" Hash="3201708976"/>
+        <HavokType Id="1287" Name="hkcdStaticTree::Aabb6BytesTree" Parent="1259" Optionals="24" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="0" Hash="4050303801"/>
+        <HavokType Id="1288" Name="hkcdStaticTree::Aabb5BytesTree" Parent="1260" Optionals="24" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="0" Hash="3914757125"/>
+        <HavokType Id="1289" Name="hkcdStaticTree::Aabb4BytesTree" Parent="1261" Optionals="24" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="0" Hash="3779211537"/>
         <HavokType Id="1290" Name="hkcdStaticTree::AabbTreeBase" Parent="0" Optionals="96502989" Format="7" SubType="0" Size="1" Alignment="1" Flags="16" Version="0" Hash="49595194">
             <Members/>
         </HavokType>
@@ -20973,14 +20795,7 @@
                 <Member Name="isCompact" Type="1388" Offset="16" Flags="32"/>
             </Members>
         </HavokType>
-        <HavokType Id="1300" Name="hkcdPlanarEntity::PlanesCollection" Parent="1309" Optionals="8" Format="7" SubType="0" Size="80" Alignment="16" Flags="0" Version="0" Hash="576414114">
-            <Members>
-                <Member Name="offsetAndScale" Type="1980" Offset="32" Flags="34"/>
-                <Member Name="planes" Type="1275" Offset="48" Flags="34"/>
-                <Member Name="cache" Type="4701" Offset="64" Flags="35"/>
-                <Member Name="criticalAccess" Type="4701" Offset="72" Flags="35"/>
-            </Members>
-        </HavokType>
+        <HavokType Id="1300" Name="hkcdPlanarEntity::PlanesCollection" Parent="1309" Optionals="8" Format="7" SubType="0" Size="80" Alignment="16" Flags="0" Version="0" Hash="576414114"/>
         <HavokType Id="1301" Name="hkcdPlanarEntity" Parent="1959" Optionals="75531977" Format="7" SubType="0" Size="32" Alignment="8" Flags="0" Version="0" Hash="1807848673">
             <Members>
                 <Member Name="debugger" Type="4625" Offset="24" Flags="35"/>
@@ -21055,46 +20870,10 @@
                 <Member Name="regions" Type="4625" Offset="40" Flags="35"/>
             </Members>
         </HavokType>
-        <HavokType Id="1312" Name="hkcdDynamicTree::DefaultTreeInt16" Parent="1279" Optionals="8" Format="7" SubType="0" Size="40" Alignment="8" Flags="0" Version="0" Hash="59675513">
-            <Template>
-                <Parameter Name="STORAGE" Kind="Type" Value="1176"/>
-            </Template>
-            <Members>
-                <Member Name="numLeaves" Type="1636" Offset="24" Flags="32"/>
-                <Member Name="path" Type="1636" Offset="28" Flags="32"/>
-                <Member Name="root" Type="1380" Offset="32" Flags="32"/>
-            </Members>
-        </HavokType>
-        <HavokType Id="1313" Name="hkcdDynamicTree::DefaultTree32" Parent="1280" Optionals="8" Format="7" SubType="0" Size="40" Alignment="8" Flags="0" Version="0" Hash="3612637810">
-            <Template>
-                <Parameter Name="STORAGE" Kind="Type" Value="1177"/>
-            </Template>
-            <Members>
-                <Member Name="numLeaves" Type="1636" Offset="24" Flags="32"/>
-                <Member Name="path" Type="1636" Offset="28" Flags="32"/>
-                <Member Name="root" Type="1382" Offset="32" Flags="32"/>
-            </Members>
-        </HavokType>
-        <HavokType Id="1314" Name="hkcdDynamicTree::DefaultTree48" Parent="1281" Optionals="8" Format="7" SubType="0" Size="40" Alignment="8" Flags="0" Version="0" Hash="2552454898">
-            <Template>
-                <Parameter Name="STORAGE" Kind="Type" Value="1178"/>
-            </Template>
-            <Members>
-                <Member Name="numLeaves" Type="1636" Offset="24" Flags="32"/>
-                <Member Name="path" Type="1636" Offset="28" Flags="32"/>
-                <Member Name="root" Type="1380" Offset="32" Flags="32"/>
-            </Members>
-        </HavokType>
-        <HavokType Id="1315" Name="hkcdDynamicTree::DefaultTreePtr" Parent="1282" Optionals="8" Format="7" SubType="0" Size="40" Alignment="8" Flags="0" Version="0" Hash="784688976">
-            <Template>
-                <Parameter Name="STORAGE" Kind="Type" Value="1179"/>
-            </Template>
-            <Members>
-                <Member Name="numLeaves" Type="1636" Offset="24" Flags="32"/>
-                <Member Name="path" Type="1636" Offset="28" Flags="32"/>
-                <Member Name="root" Type="1376" Offset="32" Flags="32"/>
-            </Members>
-        </HavokType>
+        <HavokType Id="1312" Name="hkcdDynamicTree::DefaultTreeInt16" Parent="1279" Optionals="8" Format="7" SubType="0" Size="40" Alignment="8" Flags="0" Version="0" Hash="59675513"/>
+        <HavokType Id="1313" Name="hkcdDynamicTree::DefaultTree32" Parent="1280" Optionals="8" Format="7" SubType="0" Size="40" Alignment="8" Flags="0" Version="0" Hash="3612637810"/>
+        <HavokType Id="1314" Name="hkcdDynamicTree::DefaultTree48" Parent="1281" Optionals="8" Format="7" SubType="0" Size="40" Alignment="8" Flags="0" Version="0" Hash="2552454898"/>
+        <HavokType Id="1315" Name="hkcdDynamicTree::DefaultTreePtr" Parent="1282" Optionals="8" Format="7" SubType="0" Size="40" Alignment="8" Flags="0" Version="0" Hash="784688976"/>
         <HavokType Id="1316" Name="hkcdFractureEngine" Parent="1959" Optionals="92308489" Format="7" SubType="0" Size="24" Alignment="8" Flags="3" Version="0" Hash="1546262287">
             <Members/>
         </HavokType>
@@ -21822,9 +21601,7 @@
         <HavokType Id="1610" Name="TypeRegistryTest::TypedefChild" Parent="1611" Optionals="109086377" Format="7" SubType="0" Size="24" Alignment="8" Flags="0" Version="0" Hash="2831487738">
             <Members/>
         </HavokType>
-        <HavokType Id="1611" Name="TypeRegistryTest::TypedefTest" Parent="1614" Optionals="8" Format="7" SubType="0" Size="24" Alignment="8" Flags="0" Version="0" Hash="2120679738">
-            <Members/>
-        </HavokType>
+        <HavokType Id="1611" Name="TypeRegistryTest::TypedefTest" Parent="1614" Optionals="8" Format="7" SubType="0" Size="24" Alignment="8" Flags="0" Version="0" Hash="2120679738"/>
         <HavokType Id="1614" Name="TypeRegistryTest::Ref" Parent="1959" Optionals="109086441" Format="7" SubType="0" Size="24" Alignment="8" Flags="0" Version="0" Hash="2940283184">
             <Members/>
         </HavokType>
@@ -23156,12 +22933,7 @@
                 <Member Name="y" Type="1374" Offset="8" Flags="32"/>
             </Members>
         </HavokType>
-        <HavokType Id="1984" Name="hkVector2" Parent="1982" Optionals="8" Format="7" SubType="0" Size="8" Alignment="4" Flags="0" Version="0" Hash="3688695740">
-            <Members>
-                <Member Name="x" Type="1375" Offset="0" Flags="32"/>
-                <Member Name="y" Type="1375" Offset="4" Flags="32"/>
-            </Members>
-        </HavokType>
+        <HavokType Id="1984" Name="hkVector2" Parent="1982" Optionals="8" Format="7" SubType="0" Size="8" Alignment="4" Flags="0" Version="0" Hash="3688695740"/>
         <HavokType Id="1988" Name="hkPackedVector4_6" Parent="0" Optionals="79725773" Format="7" SubType="0" Size="4" Alignment="4" Flags="0" Version="0" RequestedAlignment="4" Hash="2787573736">
             <Members>
                 <Member Name="values" Type="2449" Offset="0" Flags="32"/>
@@ -23177,34 +22949,14 @@
                 <Member Name="values" Type="1556" Offset="0" Flags="32"/>
             </Members>
         </HavokType>
-        <HavokType Id="1992" Name="hkFourTransposedPointsd" Parent="1557" Optionals="24" Format="7" SubType="0" Size="96" Alignment="32" Flags="0" Version="1" Hash="3200292424">
-            <Template>
-                <Parameter Name="FT" Kind="Type" Value="1374"/>
-            </Template>
-            <Members>
-                <Member Name="vertices" Type="1428" Offset="0" Flags="32"/>
-            </Members>
-        </HavokType>
-        <HavokType Id="1993" Name="hkFourTransposedPointsf" Parent="1558" Optionals="24" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="1" Hash="670521429">
-            <Template>
-                <Parameter Name="FT" Kind="Type" Value="1375"/>
-            </Template>
-            <Members>
-                <Member Name="vertices" Type="1429" Offset="0" Flags="32"/>
-            </Members>
-        </HavokType>
+        <HavokType Id="1992" Name="hkFourTransposedPointsd" Parent="1557" Optionals="24" Format="7" SubType="0" Size="96" Alignment="32" Flags="0" Version="1" Hash="3200292424"/>
+        <HavokType Id="1993" Name="hkFourTransposedPointsf" Parent="1558" Optionals="24" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="1" Hash="670521429"/>
         <HavokType Id="1994" Name="hkRadians" Parent="0" Optionals="79725773" Format="7" SubType="0" Size="4" Alignment="4" Flags="0" Version="0" Hash="2328375745">
             <Members>
                 <Member Name="radians" Type="1977" Offset="0" Flags="36"/>
             </Members>
         </HavokType>
-        <HavokType Id="1998" Name="hkQsTransform" Parent="1999" Optionals="8" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="0" Hash="3766916239">
-            <Members>
-                <Member Name="translation" Type="1979" Offset="0" Flags="32"/>
-                <Member Name="rotation" Type="1996" Offset="16" Flags="32"/>
-                <Member Name="scale" Type="1979" Offset="32" Flags="32"/>
-            </Members>
-        </HavokType>
+        <HavokType Id="1998" Name="hkQsTransform" Parent="1999" Optionals="8" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="0" Hash="3766916239"/>
         <HavokType Id="1999" Name="hkQsTransformf" Parent="0" Optionals="79742157" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="0" Hash="167338209">
             <Members>
                 <Member Name="translation" Type="1979" Offset="0" Flags="32"/>
@@ -25819,15 +25571,7 @@
                 <Member Name="viewersEnabled" Type="1388" Offset="280" Flags="34"/>
             </Members>
         </HavokType>
-        <HavokType Id="2834" Name="hclStateTransitionId" Parent="2549" Optionals="8" Format="7" SubType="0" Size="4" Alignment="4" Flags="0" Version="0" Hash="71932235">
-            <Template>
-                <Parameter Name="TYPE" Kind="Type" Value="1636"/>
-                <Parameter Name="INVALID_VALUE" Kind="Value" Value="2147483647"/>
-            </Template>
-            <Members>
-                <Member Name="value" Type="1636" Offset="0" Flags="34"/>
-            </Members>
-        </HavokType>
+        <HavokType Id="2834" Name="hclStateTransitionId" Parent="2549" Optionals="8" Format="7" SubType="0" Size="4" Alignment="4" Flags="0" Version="0" Hash="71932235"/>
         <HavokType Id="2836" Name="hclClothData" Parent="1959" Optionals="1182828185" Format="7" SubType="0" Size="152" Alignment="8" Flags="0" Version="3" Hash="3963035682">
             <Members>
                 <Member Name="name" Type="2033" Offset="24" Flags="32"/>
@@ -35259,11 +35003,7 @@
         <HavokType Id="1980" Name="hkVector4" Parent="1979" Optionals="8" Format="1064" SubType="1375" Size="16" Alignment="16" Flags="0" Version="0" Hash="3266831369"/>
         <HavokType Id="1981" Name="hkVector4d" Parent="0" Optionals="12633327" Format="1064" SubType="1374" Size="32" Alignment="32" Flags="0" Version="0" Hash="501647244"/>
         <HavokType Id="1991" Name="hkIntVector" Parent="0" Optionals="12633327" Format="1064" SubType="1381" Size="16" Alignment="16" Flags="0" Version="0" Hash="982607872"/>
-        <HavokType Id="1995" Name="hkQuaternion" Parent="1996" Optionals="8" Format="1064" SubType="1375" Size="16" Alignment="16" Flags="0" Version="0" Hash="2550379486">
-            <Members>
-                <Member Name="vec" Type="1979" Offset="0" Flags="32"/>
-            </Members>
-        </HavokType>
+        <HavokType Id="1995" Name="hkQuaternion" Parent="1996" Optionals="8" Format="1064" SubType="1375" Size="16" Alignment="16" Flags="0" Version="0" Hash="2550379486"/>
         <HavokType Id="1996" Name="hkQuaternionf" Parent="0" Optionals="79744239" Format="1064" SubType="1375" Size="16" Alignment="16" Flags="0" Version="0" Hash="1395605379">
             <Members>
                 <Member Name="vec" Type="1979" Offset="0" Flags="32"/>
@@ -35280,81 +35020,22 @@
                 <Member Name="translation" Type="1979" Offset="48" Flags="34"/>
             </Members>
         </HavokType>
-        <HavokType Id="2004" Name="hkTransform" Parent="2003" Optionals="8" Format="4136" SubType="1375" Size="64" Alignment="16" Flags="0" Version="0" Hash="934206565">
-            <Members>
-                <Member Name="rotation" Type="2013" Offset="0" Flags="34"/>
-                <Member Name="translation" Type="1979" Offset="48" Flags="34"/>
-            </Members>
-        </HavokType>
+        <HavokType Id="2004" Name="hkTransform" Parent="2003" Optionals="8" Format="4136" SubType="1375" Size="64" Alignment="16" Flags="0" Version="0" Hash="934206565"/>
         <HavokType Id="2005" Name="hkTransformd" Parent="0" Optionals="79742159" Format="4136" SubType="1374" Size="128" Alignment="32" Flags="0" Version="0" Hash="4240689900">
             <Members>
                 <Member Name="rotation" Type="2012" Offset="0" Flags="34"/>
                 <Member Name="translation" Type="1981" Offset="96" Flags="34"/>
             </Members>
         </HavokType>
-        <HavokType Id="2006" Name="hkRotation" Parent="2013" Optionals="8" Format="3112" SubType="1375" Size="48" Alignment="16" Flags="0" Version="0" Hash="1766099767">
-            <Template>
-                <Parameter Name="FT" Kind="Type" Value="1375"/>
-            </Template>
-        </HavokType>
-        <HavokType Id="2007" Name="hkMatrix4" Parent="2009" Optionals="8" Format="4136" SubType="1375" Size="64" Alignment="16" Flags="0" Version="0" Hash="1158521916">
-            <Template>
-                <Parameter Name="FT" Kind="Type" Value="1375"/>
-            </Template>
-            <Members>
-                <Member Name="col0" Type="1979" Offset="0" Flags="32"/>
-                <Member Name="col1" Type="1979" Offset="16" Flags="32"/>
-                <Member Name="col2" Type="1979" Offset="32" Flags="32"/>
-                <Member Name="col3" Type="1979" Offset="48" Flags="32"/>
-            </Members>
-        </HavokType>
-        <HavokType Id="2008" Name="hkMatrix4d" Parent="1561" Optionals="8" Format="4136" SubType="1374" Size="128" Alignment="32" Flags="0" Version="0" Hash="1444738702">
-            <Template>
-                <Parameter Name="FT" Kind="Type" Value="1374"/>
-            </Template>
-            <Members>
-                <Member Name="col0" Type="1981" Offset="0" Flags="32"/>
-                <Member Name="col1" Type="1981" Offset="32" Flags="32"/>
-                <Member Name="col2" Type="1981" Offset="64" Flags="32"/>
-                <Member Name="col3" Type="1981" Offset="96" Flags="32"/>
-            </Members>
-        </HavokType>
-        <HavokType Id="2009" Name="hkMatrix4f" Parent="3147" Optionals="8" Format="4136" SubType="1375" Size="64" Alignment="16" Flags="0" Version="0" Hash="3668900680">
-            <Template>
-                <Parameter Name="FT" Kind="Type" Value="1375"/>
-            </Template>
-            <Members>
-                <Member Name="col0" Type="1979" Offset="0" Flags="32"/>
-                <Member Name="col1" Type="1979" Offset="16" Flags="32"/>
-                <Member Name="col2" Type="1979" Offset="32" Flags="32"/>
-                <Member Name="col3" Type="1979" Offset="48" Flags="32"/>
-            </Members>
-        </HavokType>
-        <HavokType Id="2010" Name="hkMatrix3" Parent="2015" Optionals="8" Format="3112" SubType="1375" Size="48" Alignment="16" Flags="0" Version="0" Hash="828405917">
-            <Template>
-                <Parameter Name="FT" Kind="Type" Value="1375"/>
-            </Template>
-        </HavokType>
-        <HavokType Id="2012" Name="hkRotationd" Parent="1562" Optionals="8" Format="3112" SubType="1374" Size="96" Alignment="32" Flags="0" Version="0" Hash="3182003458">
-            <Template>
-                <Parameter Name="FT" Kind="Type" Value="1374"/>
-            </Template>
-        </HavokType>
-        <HavokType Id="2013" Name="hkRotationf" Parent="1563" Optionals="8" Format="3112" SubType="1375" Size="48" Alignment="16" Flags="0" Version="0" Hash="1834776654">
-            <Template>
-                <Parameter Name="FT" Kind="Type" Value="1375"/>
-            </Template>
-        </HavokType>
-        <HavokType Id="2014" Name="hkMatrix3d" Parent="1564" Optionals="8" Format="3112" SubType="1374" Size="96" Alignment="32" Flags="0" Version="0" Hash="3559733664">
-            <Template>
-                <Parameter Name="FT" Kind="Type" Value="1374"/>
-            </Template>
-        </HavokType>
-        <HavokType Id="2015" Name="hkMatrix3f" Parent="1565" Optionals="8" Format="3112" SubType="1375" Size="48" Alignment="16" Flags="0" Version="0" Hash="3984004343">
-            <Template>
-                <Parameter Name="FT" Kind="Type" Value="1375"/>
-            </Template>
-        </HavokType>
+        <HavokType Id="2006" Name="hkRotation" Parent="2013" Optionals="8" Format="3112" SubType="1375" Size="48" Alignment="16" Flags="0" Version="0" Hash="1766099767"/>
+        <HavokType Id="2007" Name="hkMatrix4" Parent="2009" Optionals="8" Format="4136" SubType="1375" Size="64" Alignment="16" Flags="0" Version="0" Hash="1158521916"/>
+        <HavokType Id="2008" Name="hkMatrix4d" Parent="1561" Optionals="8" Format="4136" SubType="1374" Size="128" Alignment="32" Flags="0" Version="0" Hash="1444738702"/>
+        <HavokType Id="2009" Name="hkMatrix4f" Parent="3147" Optionals="8" Format="4136" SubType="1375" Size="64" Alignment="16" Flags="0" Version="0" Hash="3668900680"/>
+        <HavokType Id="2010" Name="hkMatrix3" Parent="2015" Optionals="8" Format="3112" SubType="1375" Size="48" Alignment="16" Flags="0" Version="0" Hash="828405917"/>
+        <HavokType Id="2012" Name="hkRotationd" Parent="1562" Optionals="8" Format="3112" SubType="1374" Size="96" Alignment="32" Flags="0" Version="0" Hash="3182003458"/>
+        <HavokType Id="2013" Name="hkRotationf" Parent="1563" Optionals="8" Format="3112" SubType="1375" Size="48" Alignment="16" Flags="0" Version="0" Hash="1834776654"/>
+        <HavokType Id="2014" Name="hkMatrix3d" Parent="1564" Optionals="8" Format="3112" SubType="1374" Size="96" Alignment="32" Flags="0" Version="0" Hash="3559733664"/>
+        <HavokType Id="2015" Name="hkMatrix3f" Parent="1565" Optionals="8" Format="3112" SubType="1375" Size="48" Alignment="16" Flags="0" Version="0" Hash="3984004343"/>
         <HavokType Id="2047" Name="hkVariantArray" Parent="0" Optionals="79726319" Format="8" SubType="0" Size="24" Alignment="8" Flags="0" Version="0" Hash="1735144495">
             <Members>
                 <Member Name="ptr" Type="1369" Offset="0" Flags="34"/>
