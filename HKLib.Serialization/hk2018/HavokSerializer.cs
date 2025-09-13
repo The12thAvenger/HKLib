@@ -34,19 +34,19 @@ public abstract class HavokSerializer
     }
 
     /// <summary>
-    /// Loads a Havok 2018 type compendium from a path into the serialier to enable deserialization of tagfiles which
+    /// Loads a Havok 2018 type compendium from a path into the serializer to enable deserialization of tagfiles which
     /// reference it.
     /// </summary>
     public virtual void LoadCompendium(string path) => LoadCompendium(GetReadStream(path));
 
     /// <summary>
-    /// Loads a Havok 2018 type compendium from a stream into the serialier to enable deserialization of tagfiles which
+    /// Loads a Havok 2018 type compendium from a stream into the serializer to enable deserialization of tagfiles which
     /// reference it.
     /// </summary>
     public abstract void LoadCompendium(Stream stream);
 
     /// <summary>
-    /// Loads a type compendium into the serialier to enable deserialization of tagfiles which reference it.
+    /// Loads a type compendium into the serializer to enable deserialization of tagfiles which reference it.
     /// </summary>
     public abstract void LoadCompendium(HavokCompendium compendium);
 
