@@ -16,17 +16,10 @@ public class HavokTypeRegistry
         { 28, 7 }
     };
 
-    private readonly Dictionary<string, HavokType> _typesFromIdentity = new();
-    private readonly Dictionary<Type, HavokType> _typesFromType = new();
-
     public static readonly HavokTypeRegistry Instance = LoadDefault();
 
-    private static HavokTypeRegistry LoadDefault() 
-    {
-        string basePath = AppDomain.CurrentDomain.BaseDirectory;
-        string typeRegPath = Path.Join(basePath, "Res", "HavokTypeRegistry20180100.xml");
-        return Load(typeRegPath);
-    }
+    private readonly Dictionary<string, HavokType> _typesFromIdentity = new();
+    private readonly Dictionary<Type, HavokType> _typesFromType = new();
 
     public HavokTypeRegistry(IReadOnlyList<HavokType> types)
     {
@@ -45,6 +38,13 @@ public class HavokTypeRegistry
     }
 
     public IEnumerable<HavokType> Types => _typesFromIdentity.Values;
+
+    private static HavokTypeRegistry LoadDefault()
+    {
+        string basePath = AppDomain.CurrentDomain.BaseDirectory;
+        string typeRegPath = Path.Join(basePath, "Res", "HavokTypeRegistry20180100.xml");
+        return Load(typeRegPath);
+    }
 
     public HavokType? GetType(string identity)
     {
@@ -176,7 +176,10 @@ public class HavokTypeRegistry
             {
                 foreach (XElement preset in presets.Elements())
                 {
-                    builder.WithPreset(preset.Attribute("Name")!.Value);
+                    int value = int.TryParse(preset.Attribute("Value")!.Value, out int val)
+                        ? val
+                        : (int)(uint)preset.Attribute("Value")!;
+                    builder.WithPreset(preset.Attribute("Name")!.Value, value);
                 }
             }
 

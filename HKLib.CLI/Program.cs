@@ -25,6 +25,10 @@ public static class Program
             string outputPath = path[..^3] + "hkx";
             Backup(outputPath);
 
+
+#if DEBUG
+            binarySerializer.Write(xmlSerializer.Read(path), outputPath);
+#else
             try
             {
                 binarySerializer.Write(xmlSerializer.Read(path), outputPath);
@@ -36,6 +40,7 @@ public static class Program
                 Console.WriteLine("Press any key to exit...");
                 Console.ReadKey();
             }
+#endif
         }
         else if (path.EndsWith(".hkx"))
         {
@@ -47,6 +52,9 @@ public static class Program
                 binarySerializer.LoadCompendium(compendiumPath);
             }
 
+#if DEBUG
+            xmlSerializer.Write(binarySerializer.Read(path), outputPath);
+#else
             try
             {
                 xmlSerializer.Write(binarySerializer.Read(path), outputPath);
@@ -65,6 +73,7 @@ public static class Program
                 Console.WriteLine("Press any key to exit...");
                 Console.ReadKey();
             }
+#endif
         }
         else
         {

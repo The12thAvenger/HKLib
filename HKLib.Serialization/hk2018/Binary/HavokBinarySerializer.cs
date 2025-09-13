@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using HKLib.hk2018;
+﻿using HKLib.hk2018;
 using HKLib.Reflection.hk2018;
 using HKLib.Serialization.hk2018.Binary.Util;
 
@@ -567,7 +566,9 @@ public class HavokBinarySerializer : HavokSerializer
         for (int i = 1; i < builders.Count; i++)
         {
             int typeIndex = (int)reader.ReadHavokVarUInt();
-            Debug.Assert(typeIndex != 0);
+
+            // version 2019.1 does not contain entries for all types
+            if (typeIndex == 0) break;
 
             HavokTypeBuilder builder = builders[typeIndex];
             int parentIndex = (int)reader.ReadHavokVarUInt();
@@ -766,7 +767,8 @@ public class HavokBinarySerializer : HavokSerializer
                 throw new InvalidDataException($"Unable to verify hash for type {types[typeIndex].Identity}.");
             }
 
-            if (reader.ReadUInt32() != hash)
+            uint readHash = reader.ReadUInt32();
+            if (readHash != hash)
             {
                 throw new InvalidDataException($"Incorrect hash encountered for type {types[typeIndex].Identity}.");
             }

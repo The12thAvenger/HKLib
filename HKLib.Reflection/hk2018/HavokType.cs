@@ -122,7 +122,7 @@ public class HavokType : Reflection.HavokType
     /// <summary>
     /// Named instances of this type. Used for enum values.
     /// </summary>
-    public IReadOnlyList<string> Presets { get; init; } = Array.Empty<string>();
+    public IReadOnlyList<Preset> Presets { get; init; } = Array.Empty<Preset>();
 
     /// <summary>
     /// Instantiates the C# type which corresponds to this
@@ -183,6 +183,11 @@ public class HavokType : Reflection.HavokType
     {
         public HavokType Value { get; }
     }
+
+    /// <summary>
+    /// Named type instance, used for enums
+    /// </summary>
+    public record Preset(string Name, int Value);
 
     /// <summary>
     /// Template argument for a <see cref="HavokType" />. Is either an integer or a HavokType

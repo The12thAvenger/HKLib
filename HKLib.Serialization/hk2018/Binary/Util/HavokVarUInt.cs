@@ -112,6 +112,7 @@ public record HavokVarUInt
         else
         {
             value = -(value + 1);
+            value = (value << 1) | 1;
         }
 
         return ToBytes((ulong)value);

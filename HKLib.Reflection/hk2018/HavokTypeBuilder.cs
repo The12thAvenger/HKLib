@@ -24,7 +24,7 @@ public class HavokTypeBuilder
 
     private TypeReference? _parent;
     private HavokTypeBuilder? _parentBuilder;
-    private List<string> _presets = new();
+    private List<HavokType.Preset> _presets = new();
     private List<HavokType.Member?> _properties = new();
     private TypeReference? _subType;
     private List<HavokTypeBuilder?> _templateBuilders = new();
@@ -83,7 +83,7 @@ public class HavokTypeBuilder
     public IReadOnlyList<HavokType.Member?> Properties => _properties.AsReadOnly();
 
     /// <inheritdoc cref="HavokType.Presets" />
-    public IReadOnlyList<string> Presets => _presets.AsReadOnly();
+    public IReadOnlyList<HavokType.Preset> Presets => _presets.AsReadOnly();
 
     /// <inheritdoc cref="HavokType.Format" />
     public int Format { get; private set; }
@@ -517,20 +517,20 @@ public class HavokTypeBuilder
     /// <summary>
     /// Sets the value of the <see cref="HavokType.Presets" /> property;
     /// </summary>
-    public HavokTypeBuilder WithPresets(IEnumerable<string> presets)
+    public HavokTypeBuilder WithPresets(IEnumerable<HavokType.Preset> presets)
     {
         CheckIfBuilt();
-        _presets = new List<string>(presets);
+        _presets = new List<HavokType.Preset>(presets);
         return this;
     }
 
     /// <summary>
     /// Adds a preset to the <see cref="HavokType.Presets" /> property;
     /// </summary>
-    public HavokTypeBuilder WithPreset(string name)
+    public HavokTypeBuilder WithPreset(string name, int value)
     {
         CheckIfBuilt();
-        _presets.Add(name);
+        _presets.Add(new HavokType.Preset(name, value));
         return this;
     }
 
